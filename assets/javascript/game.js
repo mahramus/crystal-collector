@@ -13,12 +13,14 @@ $(document).ready(function () {
     function initializeGame() {
         computerNumber = Math.floor(Math.random() * (120 - 19)) + 19;
         userCount = 0;
+        isOver = false;
         $(".crystal-1").attr("number-value", Math.floor(Math.random() * 12) + 1);
         $(".crystal-2").attr("number-value", Math.floor(Math.random() * 12) + 1);
         $(".crystal-3").attr("number-value", Math.floor(Math.random() * 12) + 1);
         $(".crystal-4").attr("number-value", Math.floor(Math.random() * 12) + 1);
         $("#results").empty();
         $("#computer-score").text(computerNumber);
+        $("#user-score").text(userCount);
     }
 
     initializeGame();
@@ -99,16 +101,7 @@ $(document).ready(function () {
 
     };
 
-    
-
-    // createButton ();
-
-
-    $(".btn").on("click", function () {
-        isOver = false;
-        initializeGame();
-    });
-
+    $("#results").on("click", ".btn", initializeGame);
 
 });
 
