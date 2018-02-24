@@ -7,38 +7,41 @@ $(document).ready(function () {
     var winCount = 0;
     var loseCount = 0;
     var isOver;
+    var resultsMessage;
 
-    // End of all variables
 
     function initializeGame() {
         computerNumber = Math.floor(Math.random() * (120 - 19)) + 19;
         userCount = 0;
-        $("user-score, #results").empty();
+        $(".crystal-1").attr("number-value", Math.floor(Math.random() * 12) + 1);
+        $(".crystal-2").attr("number-value", Math.floor(Math.random() * 12) + 1);
+        $(".crystal-3").attr("number-value", Math.floor(Math.random() * 12) + 1);
+        $(".crystal-4").attr("number-value", Math.floor(Math.random() * 12) + 1);
+        $("#results").empty();
         $("#computer-score").text(computerNumber);
-        isOver = false;
-
     }
 
     initializeGame();
 
-    // Creating crystal numbers
 
-    // for (var i = 0; i < 4; i++) {
+    function createButton() {
+        if ($(resultsMessage).hasClass("win-message")) {
+            var playAgainBtn = $("<button type = 'button'>");
+            playAgainBtn.addClass("btn btn-success");
+            playAgainBtn.text("PLAY AGAIN");
+            $("#results").append(playAgainBtn);
+            isOver = true;
+    }
 
-    $(".crystal-1").attr("number-value", Math.floor(Math.random() * 12) + 1);
-    $(".crystal-2").attr("number-value", Math.floor(Math.random() * 12) + 1);
-    $(".crystal-3").attr("number-value", Math.floor(Math.random() * 12) + 1);
-    $(".crystal-4").attr("number-value", Math.floor(Math.random() * 12) + 1);
+        else if ($(resultsMessage).hasClass("lose-message")) {
+            var playAgainBtn = $("<button type ='button'>");
+            playAgainBtn.addClass("btn btn-danger");
+            playAgainBtn.text("TRY AGAIN");
+            $("#results").append(playAgainBtn);
+            isOver = true;
+        }
 
-    // var crystalImage1 = $("<img src='assets/images/crystal.jpg'>");
-
-    // crystalImage1.addClass("crystal crystal-size img-fluid");
-
-    // crystalImage1.attr("number-value", Math.floor(Math.random() * 12) + 1);
-
-    // $("#slot1").append(crystalImage1);
-
-    // }
+    };
 
     // Click event for crystals
 
@@ -66,7 +69,8 @@ $(document).ready(function () {
             resultsMessage.addClass("win-message");
             resultsMessage.text("You Guessed It!");
             $("#results").append(resultsMessage);
-            var playAgainBtn = $("<button>");
+            // createButton ();
+            var playAgainBtn = $("<button type = 'button'>");
             playAgainBtn.addClass("btn btn-success");
             playAgainBtn.text("PLAY AGAIN");
             $("#results").append(playAgainBtn);
@@ -83,7 +87,8 @@ $(document).ready(function () {
             resultsMessage.addClass("lose-message");
             resultsMessage.text("You Went Over.");
             $("#results").append(resultsMessage);
-            var playAgainBtn = $("<button>");
+            // createButton ();
+            var playAgainBtn = $("<button type ='button'>");
             playAgainBtn.addClass("btn btn-danger");
             playAgainBtn.text("TRY AGAIN");
             $("#results").append(playAgainBtn);
@@ -94,7 +99,13 @@ $(document).ready(function () {
 
     };
 
+    
+
+    // createButton ();
+
+
     $(".btn").on("click", function () {
+        isOver = false;
         initializeGame();
     });
 
