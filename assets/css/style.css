@@ -1,0 +1,11 @@
+.crystal-size {
+  float: left;
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  align-content: center;
+}
+
+.center {
+    align-content: center;
+}

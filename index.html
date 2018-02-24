@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crystal Collector Game</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+
+    <header class- "container">
+        <div class="container text-center">
+            <h1>Crystal Collector</h1>
+        </div>
+    </header>
+    <br>
+    <!-- Scoreboard -->
+
+    <div class="container">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="wins">Wins
+                        <span id="win-counter"></span>
+                    </h3>
+                    <h3 class="losses">Losses
+                        <span id="loss-counter"></span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Score Row -->
+
+    <div class="container">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 id="computer-score"></h1>
+                    <!--  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"> -->
+                    <p>Computer Number</p>
+                </div>
+                <div class="col-sm-6">
+                    <h1 id="user-score">0</h1>
+                    <!-- <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive crystal" style="width:100%" alt="Image"> -->
+                    <p>Your Number</p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <!-- Crystals -->
+        <div class="container">
+            <div class="container text-center">
+                <h3>Your Crystals</h3>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12 d-flex justify-content-center">
+                        <div id="slot1" class="mx-auto center">
+                            <img class="crystal crystal-1 crystal-size img-fluid" src="assets/images/blue.png">
+                        </div>
+                        <div id="slot2" class="mx-auto center">
+                            <img class="crystal crystal-2 crystal-size img-fluid" src="assets/images/green.png">
+                        </div>
+                        <div id="slot3" class="mx-auto center">
+                            <img class="crystal crystal-3 crystal-size img-fluid" src="assets/images/red.png">
+                        </div>
+                        <div id="slot4" class="mx-auto center">
+                            <img class="crystal crystal-4 crystal-size img-fluid" src="assets/images/yellow.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <!-- Results Message Area -->
+        <div class="container">
+            <div class="container text-center">
+                <div id="results"></div>
+                <br>
+            </div>
+        </div>
+        <br>
+
+
+
+</body>
+
+</html>
