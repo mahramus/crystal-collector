@@ -9,3 +9,8 @@
 .center {
     align-content: center;
 }
+
+footer {
+  background-image: url(images/footer-background.png);
+  background-size: cover;
+}
